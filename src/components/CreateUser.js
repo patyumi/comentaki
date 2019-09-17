@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "./auth";
+import { AuthContext } from "../config/auth";
 
+// COMPONENTE
+// Cria um novo usuário
 const CreateUser = () => {
   const auth = useContext(AuthContext);
 
+  // Controle do formulário
   const [form, setForm] = useState({ email: "", passwd: "" });
   const onChange = campo => evt => {
     setForm({
@@ -17,6 +20,7 @@ const CreateUser = () => {
     return null;
   }
 
+  // Usuário não logado
   return (
     <>
       <h3>Criar nova conta:</h3>

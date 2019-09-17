@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import firebase from "./firebase";
+import firebase from "../firebase";
+// Esse arquivo contém funções para manipular o BD
 
 // FIREBASE FUNC ____________________________________
 // Salva dados no BD

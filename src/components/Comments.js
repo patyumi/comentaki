@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useDatabase } from "./database";
+import { useDatabase } from "../config/database";
 
 import Comment from "./Comment";
 

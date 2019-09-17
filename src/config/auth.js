@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import firebase from "./firebase";
+import firebase from "../firebase";
+// Arquivo de autenticação
 
 export const AuthContext = React.createContext();
 

@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import Time from "./Time";
-
-import { AuthContext } from "./auth";
 
 // COMPONENTE FILHO DE Comments _____________________
 // Exibe os comentários que estão no BD
 const Comment = ({ comment }) => {
-  const auth = useContext(AuthContext);
   // Retorno de elementos (retorna os elementos do map)
   return (
     <div>

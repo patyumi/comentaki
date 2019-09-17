@@ -1,19 +1,23 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "./auth";
+import { AuthContext } from "../config/auth";
 
+// COMPONENTE
 const FormDisplayName = ({ displayName, user }) => {
   const [newDisplayName, setNewDisplayName] = useState(displayName);
 
+  // Controle de formulário
   const onChange = evt => {
     setNewDisplayName(evt.target.value);
   };
 
+  // Salva novo nickName
   const save = () => {
     if (newDisplayName !== "") {
       user.updateProfile({ displayName: newDisplayName });
     }
   };
 
+  // Elementos - formulário para mudar o nickName
   return (
     <div>
       <input type="text" value={newDisplayName} onChange={onChange} />
@@ -22,13 +26,16 @@ const FormDisplayName = ({ displayName, user }) => {
   );
 };
 
+// COMPONENTE
 const UserInfo = () => {
   const auth = useContext(AuthContext);
 
+  // Usuário não autenticado
   if (auth.user === null) {
     return null;
   }
 
+  // Recupera dados do usuário
   const { displayName } = auth.user;
   const [alternativeDisplayName] = auth.user.email.split("@");
   const dn = displayName || alternativeDisplayName;

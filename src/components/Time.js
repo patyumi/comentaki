@@ -1,5 +1,5 @@
 // COMPONENTE FILHO DE Comment ______________________
-// Exibe os comentários que estão no BD
+// Configura o tempo
 const Time = ({ timestamp }) => {
   const date = new Date(timestamp);
   const hours = date.getHours();

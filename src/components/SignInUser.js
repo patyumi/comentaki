@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "./auth";
+import { AuthContext } from "../config/auth";
 
+//COMPONENTE
+// Faz o login do usuário
 const SignInUser = () => {
   const auth = useContext(AuthContext);
 
+  // Controle de formulário
   const [form, setForm] = useState({ email: "", passwd: "" });
   const onChange = campo => evt => {
     setForm({

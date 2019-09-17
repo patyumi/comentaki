@@ -1,12 +1,12 @@
 import React from "react";
 
-import NewComment from "./NewComment";
-import Comments from "./Comments";
-import CreateUser from "./CreateUser";
-import UserInfo from "./UserInfo";
-import SignInUser from "./SignInUser";
+import NewComment from "./components/NewComment";
+import Comments from "./components/Comments";
+import CreateUser from "./components/CreateUser";
+import UserInfo from "./components/UserInfo";
+import SignInUser from "./components/SignInUser";
 
-import { AuthProvider } from "./auth";
+import { AuthProvider } from "./config/auth";
 
 function App() {
   return (
