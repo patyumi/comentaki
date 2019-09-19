@@ -1,23 +1,27 @@
 import React from "react";
 
+// Componentes
+import Header from "./components/Header";
 import NewComment from "./components/NewComment";
 import Comments from "./components/Comments";
-import CreateUser from "./components/CreateUser";
-import UserInfo from "./components/UserInfo";
-import SignInUser from "./components/SignInUser";
 
+// Estilos CSS
+import GlobalStyle from "./styles/global";
+import { Container } from "./styles/styles";
+
+// ContextAPI - passa dados de autenticação
 import { AuthProvider } from "./config/auth";
 
 function App() {
   return (
     <AuthProvider>
-      <div>
+      <Container>
+        <Header />
         <NewComment />
         <Comments />
-        <CreateUser />
-        <SignInUser />
-        <UserInfo />
-      </div>
+
+        <GlobalStyle />
+      </Container>
     </AuthProvider>
   );
 }

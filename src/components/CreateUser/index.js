@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../config/auth";
+import { AuthContext } from "../../config/auth";
+
+import { Form } from "../SignInUser/styles";
 
 // COMPONENTE
 // Cria um novo usuário
@@ -22,8 +24,7 @@ const CreateUser = () => {
 
   // Usuário não logado
   return (
-    <>
-      <h3>Criar nova conta:</h3>
+    <Form>
       {auth.createUser.createUserState.error !== "" && (
         <p>{auth.createUser.createUserState.error}</p>
       )}
@@ -35,6 +36,7 @@ const CreateUser = () => {
       />
       <input
         type="password"
+        placeholder="Senha"
         value={form.passwd}
         onChange={onChange("passwd")}
       />
@@ -45,7 +47,7 @@ const CreateUser = () => {
       >
         Criar Conta
       </button>
-    </>
+    </Form>
   );
 };
 

@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../config/auth";
+import { AuthContext } from "../../config/auth";
+
+import { Form } from "../SignInUser/styles";
 
 // COMPONENTE
 const FormDisplayName = ({ displayName, user }) => {
@@ -19,15 +21,16 @@ const FormDisplayName = ({ displayName, user }) => {
 
   // Elementos - formulário para mudar o nickName
   return (
-    <div>
+    <Form>
       <input type="text" value={newDisplayName} onChange={onChange} />
-      <button onClick={save}>Save D. Name</button>
-    </div>
+      <button onClick={save}>Salvar</button>
+    </Form>
   );
 };
 
 // COMPONENTE
 const UserInfo = () => {
+  const [editNick, setEditNick] = useState(false);
   const auth = useContext(AuthContext);
 
   // Usuário não autenticado
@@ -42,9 +45,21 @@ const UserInfo = () => {
 
   return (
     <>
-      <p>Olá {dn}</p>
-      <FormDisplayName displayName={dn} user={auth.user} />
-      <button onClick={auth.signOut}>Sair</button>
+      {!editNick && (
+        <>
+          <h3>Olá, {dn}!</h3>
+          <button onClick={() => setEditNick(!editNick)}>
+            Editar NickName
+          </button>
+          <button onClick={auth.signOut}>Sair</button>
+        </>
+      )}
+      {editNick && (
+        <>
+          <FormDisplayName displayName={dn} user={auth.user} />
+          <button onClick={() => setEditNick(!editNick)}>Cancelar</button>
+        </>
+      )}
     </>
   );
 };

@@ -12,7 +12,13 @@ const NewComment = () => {
 
   // Usuário não autenticado
   if (auth.user === null) {
-    return null;
+    return (
+      <input
+        type="text"
+        placeholder="Faça login para juntar-se à discussão! :=]"
+        disabled
+      />
+    );
   }
 
   // Recupera o nickName do usuário
@@ -37,7 +43,10 @@ const NewComment = () => {
   // Usuário autenticado - retorna campo para inserir comentário
   return (
     <div>
-      <textarea
+      <h4>Junte-se à discussão</h4>
+      <input
+        type="text"
+        placeholder="Digite seu texto aqui..."
         value={comment}
         onChange={evt => setComment(evt.target.value)}
       />
