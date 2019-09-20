@@ -77,4 +77,4 @@ yarn start
 
 Patrícia Yumi - patrciayumi@gmail.com
 
-Project Link: [https://github.com/PatriciYumi/my-money](https://github.com/PatriciYumi/my-money)
+Project Link: [https://github.com/PatriciYumi/comentaki](https://github.com/PatriciYumi/comentaki)
