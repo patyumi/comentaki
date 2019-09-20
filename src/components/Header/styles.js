@@ -67,4 +67,8 @@ export const Content = styled.div`
 
     cursor: pointer;
   }
+
+  button:hover {
+    background: #cb0d34;
+  }
 `;

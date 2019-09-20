@@ -15,6 +15,7 @@ const Header = () => {
   const auth = useContext(AuthContext);
 
   const data = useDatabase("comments");
+
   const quantityComments = Object.keys(data).length;
 
   return (

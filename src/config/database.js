@@ -37,7 +37,7 @@ export const useDatabase = endpoint => {
 
     // Recupera os valores em "value" em tempo real (func .on)
     ref.on("value", snapshop => {
-      console.log(snapshop.val());
+      //console.log(snapshop.val());
       setData(snapshop.val());
     });
 
